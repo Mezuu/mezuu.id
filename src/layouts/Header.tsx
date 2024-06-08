@@ -29,7 +29,7 @@ export function Header() {
     href?: string;
   }) {
     return (
-      <a href={href}>
+      <a href={href} target="_blank">
         <div className="hover:text-slate-800 transition-all ease-in-out">
           {children}
         </div>
