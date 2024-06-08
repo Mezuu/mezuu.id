@@ -1,8 +1,9 @@
 import { Header } from "./layouts/Header";
-import { SiC, SiMui, SiNestjs } from "react-icons/si";
+import { SiC, SiChakraui, SiExpress, SiMui, SiNestjs, SiNextdotjs, SiSqlite } from "react-icons/si";
 import { RiNodejsLine, RiTailwindCssFill } from "react-icons/ri";
 import { TbBrandReact } from "react-icons/tb";
 import { FaGithub, FaLink } from "react-icons/fa";
+import { BiLogoPostgresql } from "react-icons/bi";
 
 export function App() {
   return (
@@ -136,6 +137,8 @@ export function App() {
                   <RiTailwindCssFill />
                   <SiNestjs />
                   <RiNodejsLine />
+                  <SiMui />
+                  <BiLogoPostgresql />
                 </div>
               </Project>
 
@@ -195,6 +198,37 @@ export function App() {
                   </a>
                 </div>
               </Project>
+
+              <Project>
+                <img
+                  src="caylencomm.png"
+                  alt="Caylen's Commission Page"
+                  className="border rounded-md"
+                />
+                <h3 className="text-xl font-bold text-zinc-700 mt-4">
+                  Caylen&apos;s Commission Page
+                </h3>
+                <p className="mt-2">
+                  An art commission page. Includes art gallery, commission
+                  queues, pricing and TOS informations
+                </p>
+                <br />
+                <div className="flex justify-between gap-2 text-2xl items-center">
+                  <div className="flex gap-2 items-center">
+                    <SiNextdotjs />
+                    <SiExpress />
+                    <SiChakraui />
+                    <SiSqlite />
+                  </div>
+                  <a href="https://www.caylen.site" target="_blank">
+                    <div className="border p-2 rounded-md flex gap-2 text-sm items-center hover:bg-slate-200 transition-all ease-in-out">
+                      <FaLink />
+                      Web Link
+                    </div>
+                  </a>
+                </div>
+              </Project>
+
               <Project>
                 <div className="flex justify-center items-center h-full">
                   <i>More coming soon ...</i>
