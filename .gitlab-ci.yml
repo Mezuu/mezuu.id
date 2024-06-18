@@ -8,6 +8,7 @@ variables:
 clone-and-install:
   stage: pre-deploy
   script:
+    - ls
     - cd ${APP_PATH}
     - git checkout master
     - git pull origin master
