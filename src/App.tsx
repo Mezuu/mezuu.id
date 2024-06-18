@@ -134,6 +134,7 @@ export function App() {
                 <div className="flex gap-2 justify-between items-center">
                   <div className="flex gap-2 text-2xl">
                     <TbBrandReact />
+                    <RiTailwindCssFill />
                   </div>
                   <a href="https://personality-test.mezuu.id" target="_blank">
                     <div className="border p-2 rounded-md flex gap-2 text-sm items-center hover:bg-slate-200 transition-all ease-in-out">
