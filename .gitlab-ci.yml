@@ -1,0 +1,21 @@
+stages:
+  - pre-deploy
+  - deploy
+    
+clone-and-install:
+  stage: pre-deploy
+  script:
+    - cd ~/apps/mezuu.id/
+    - git checkout master
+    - git pull origin master
+    - bun i
+  tags:
+    - oracle
+
+build-and-run:
+  stage: deploy
+  script:
+    - cd ~/apps/mezuu.id/
+    - bun run build
+  tags:
+    - oracle
