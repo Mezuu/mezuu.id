@@ -3,7 +3,7 @@ stages:
   - deploy
 
 variables:
-  APP_PATH: ~/apps/mezuu.id
+  APP_PATH: /home/ubuntu/apps/mezuu.id
     
 clone-and-install:
   stage: pre-deploy
