@@ -1,11 +1,14 @@
 stages:
   - pre-deploy
   - deploy
+
+variables:
+  APP_PATH: ~/apps/mezuu.id/
     
 clone-and-install:
   stage: pre-deploy
   script:
-    - cd ~/apps/mezuu.id/
+    - cd ${APP_PATH}
     - git checkout master
     - git pull origin master
     - bun i
@@ -15,7 +18,7 @@ clone-and-install:
 build-and-run:
   stage: deploy
   script:
-    - cd ~/apps/mezuu.id/
+    - cd ${APP_PATH}
     - bun run build
   tags:
     - oracle
