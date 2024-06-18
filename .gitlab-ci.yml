@@ -4,15 +4,15 @@ stages:
 
 variables:
   APP_PATH: /home/ubuntu/apps/mezuu.id
-    
+  BUN_PATH: /home/ubuntu/.bun/bin/bun
+
 clone-and-install:
   stage: pre-deploy
   script:
-    - ls
     - cd ${APP_PATH}
     - git checkout master
     - git pull origin master
-    - bun i
+    - ${BUN_PATH} i
   tags:
     - oracle
 
@@ -20,6 +20,6 @@ build-and-run:
   stage: deploy
   script:
     - cd ${APP_PATH}
-    - bun run build
+    - ${BUN_PATH} run build
   tags:
     - oracle

@@ -117,6 +117,33 @@ export function App() {
             </h2>
             <br />
             <div className="md:columns-2 flex-col gap-4">
+
+              <Project>
+                <img
+                  src="personality-test.jpg"
+                  alt="Big Five Personality Test"
+                  className="border rounded-md"
+                />
+                <h3 className="text-xl font-bold text-zinc-700 mt-4">
+                  Big Five Personality Test
+                </h3>
+                <p className=" mt-2">
+                  Find out your personality traits based on IPIP&apos;s Big Five Personality Measurement Test. Note that there is no bad or good result. 
+                </p>
+                <br />
+                <div className="flex gap-2 justify-between items-center">
+                  <div className="flex gap-2 text-2xl">
+                    <TbBrandReact />
+                  </div>
+                  <a href="https://personality-test.mezuu.id" target="_blank">
+                    <div className="border p-2 rounded-md flex gap-2 text-sm items-center hover:bg-slate-200 transition-all ease-in-out">
+                      <FaLink />
+                      Web Link
+                    </div>
+                  </a>
+                </div>
+              </Project>
+
               <Project>
                 <img
                   src="digisign.png"
