@@ -17,32 +17,22 @@ export function App() {
           <div className="flex justify-center items-center gap-8 flex-col md:flex-row">
             <div className="flex flex-col items-center">
               <p className="drop-shadow-lg text-4xl basis-1/3 text-center font-bold text-zinc-700">
-                A Fullstack Web Developer 👨‍💻 that also happens to be an Artist
-                🎨
+                A Fullstack Web Developer 👨‍💻 that also happens to be an Artist 🎨
               </p>
               <br />
-              <span className="text-xl basis-1/3 text-slate-600">
-                — Creating things nobody asked for 🤷
-              </span>
-              <span className="text-xl basis-1/3 text-slate-600">
-                — Love coffee so much ☕️
-              </span>
+              <span className="text-xl basis-1/3 text-slate-600">— Creating things nobody asked for 🤷</span>
+              <span className="text-xl basis-1/3 text-slate-600">— Love coffee so much ☕️</span>
             </div>
             <img src="5png.png" alt="" className="w-1/2 md:w-1/3" />
           </div>
 
           <div className="rounded-t-3xl bg-slate-50 p-8 shadow-xl drop-shadow-2xl pb-16">
-            <h2 className="text-2xl font-bold text-zinc-700 mb-2">
-              About Me 👋
-            </h2>
+            <h2 className="text-2xl font-bold text-zinc-700 mb-2">About Me 👋</h2>
             <p className="mb-8">
-              You may call me Mezuu, but don&apos;t be confused with the furry
-              you see above, He&apos;s one of my OC, Archy. I&apos;m currently
-              working full-time for the government. I do silly things in my
-              spare time such as playing Valorant, Honkai: Star Rail, Minecraft,
-              scrolling social media, etc. Oh and I do arts too, I want to
-              become a game developer someday, however my journey is still far
-              ahead.
+              You may call me Mezuu, but don&apos;t be confused with the furry you see above, He&apos;s one of my OC,
+              Archy. I&apos;m currently working full-time for the government. I do silly things in my spare time such as
+              playing Valorant, Honkai: Star Rail, Minecraft, scrolling social media, etc. Oh and I do arts too, I want
+              to become a game developer someday, however my journey is still far ahead.
             </p>
 
             <h2 className="text-2xl font-bold text-zinc-700">Tools I Use 🛠️</h2>
@@ -112,23 +102,15 @@ export function App() {
             </div>
 
             <br />
-            <h2 className="text-2xl font-bold text-zinc-700 mt-8">
-              Silly Things I Created 🧩
-            </h2>
+            <h2 className="text-2xl font-bold text-zinc-700 mt-8">Silly Things I Created 🧩</h2>
             <br />
             <div className="md:columns-2 flex-col gap-4">
-
               <Project>
-                <img
-                  src="personality-test.jpg"
-                  alt="Big Five Personality Test"
-                  className="border rounded-md"
-                />
-                <h3 className="text-xl font-bold text-zinc-700 mt-4">
-                  Big Five Personality Test
-                </h3>
+                <img src="personality-test.jpg" alt="Big Five Personality Test" className="border rounded-md" />
+                <h3 className="text-xl font-bold text-zinc-700 mt-4">Big Five Personality Test</h3>
                 <p className=" mt-2">
-                  Find out your personality traits based on IPIP&apos;s Big Five Personality Measurement Test. Note that there is no bad or good result. 
+                  Find out your personality traits based on IPIP&apos;s Big Five Personality Measurement Test. Note that
+                  there is no bad or good result.
                 </p>
                 <br />
                 <div className="flex gap-2 justify-between items-center">
@@ -136,28 +118,29 @@ export function App() {
                     <TbBrandReact />
                     <RiTailwindCssFill />
                   </div>
-                  <a href="https://personality-test.mezuu.id" target="_blank">
-                    <div className="border p-2 rounded-md flex gap-2 text-sm items-center hover:bg-slate-200 transition-all ease-in-out">
-                      <FaLink />
-                      Web Link
-                    </div>
-                  </a>
+                  <div className="flex gap-2">
+                    <a href="https://github.com/Mezuu/personality-test" target="_blank">
+                      <div className="border p-2 rounded-md flex gap-2 text-sm items-center hover:bg-slate-200 transition-all ease-in-out">
+                        <FaGithub />
+                        Project Repo
+                      </div>
+                    </a>
+                    <a href="https://personality-test.mezuu.id" target="_blank">
+                      <div className="border p-2 rounded-md flex gap-2 text-sm items-center hover:bg-slate-200 transition-all ease-in-out">
+                        <FaLink />
+                        Web Link
+                      </div>
+                    </a>
+                  </div>
                 </div>
               </Project>
 
               <Project>
-                <img
-                  src="digisign.png"
-                  alt="DigiSign"
-                  className="border rounded-md"
-                />
-                <h3 className="text-xl font-bold text-zinc-700 mt-4">
-                  DigiSign
-                </h3>
+                <img src="digisign.png" alt="DigiSign" className="border rounded-md" />
+                <h3 className="text-xl font-bold text-zinc-700 mt-4">DigiSign</h3>
                 <p className=" mt-2">
-                  Generates certificate for your event without hassle. Just
-                  upload the data and it will spits out PDFs. Currently closed
-                  source.
+                  Generates certificate for your event without hassle. Just upload the data and it will spits out PDFs.
+                  Currently closed source.
                 </p>
                 <br />
                 <div className="flex gap-2 text-2xl">
@@ -171,18 +154,9 @@ export function App() {
               </Project>
 
               <Project>
-                <img
-                  src="commission.png"
-                  alt="Mezuu's Commission Page"
-                  className="border rounded-md"
-                />
-                <h3 className="text-xl font-bold text-zinc-700 mt-4">
-                  Mezuu&apos;s Commission Page
-                </h3>
-                <p className=" mt-2">
-                  A web dedicated to display my art portfolios for commission
-                  purposes
-                </p>
+                <img src="commission.png" alt="Mezuu's Commission Page" className="border rounded-md" />
+                <h3 className="text-xl font-bold text-zinc-700 mt-4">Mezuu&apos;s Commission Page</h3>
+                <p className=" mt-2">A web dedicated to display my art portfolios for commission purposes</p>
                 <br />
                 <div className="flex gap-2 justify-between items-center">
                   <div className="flex gap-2 text-2xl">
@@ -204,21 +178,15 @@ export function App() {
                   alt="collocation-approximation"
                   className="border rounded-md"
                 />
-                <h3 className="text-xl font-bold text-zinc-700 mt-4">
-                  collocation-approximation
-                </h3>
+                <h3 className="text-xl font-bold text-zinc-700 mt-4">collocation-approximation</h3>
                 <p className="mt-2">
-                  A console application that approximates a mathematic function,
-                  derivative, and integral based on given sets of 2-dimensional
-                  point. Written in C.
+                  A console application that approximates a mathematic function, derivative, and integral based on given
+                  sets of 2-dimensional point. Written in C.
                 </p>
                 <br />
                 <div className="flex justify-between gap-2 text-2xl items-center">
                   <SiC />
-                  <a
-                    href="https://github.com/Mezuu/collocation-approximation"
-                    target="_blank"
-                  >
+                  <a href="https://github.com/Mezuu/collocation-approximation" target="_blank">
                     <div className="border p-2 rounded-md flex gap-2 text-sm items-center hover:bg-slate-200 transition-all ease-in-out">
                       <FaGithub />
                       Project Repo
@@ -228,17 +196,10 @@ export function App() {
               </Project>
 
               <Project>
-                <img
-                  src="caylencomm.png"
-                  alt="Caylen's Commission Page"
-                  className="border rounded-md"
-                />
-                <h3 className="text-xl font-bold text-zinc-700 mt-4">
-                  Caylen&apos;s Commission Page
-                </h3>
+                <img src="caylencomm.png" alt="Caylen's Commission Page" className="border rounded-md" />
+                <h3 className="text-xl font-bold text-zinc-700 mt-4">Caylen&apos;s Commission Page</h3>
                 <p className="mt-2">
-                  An art commission page. Includes art gallery, commission
-                  queues, pricing and TOS informations
+                  An art commission page. Includes art gallery, commission queues, pricing and TOS informations
                 </p>
                 <br />
                 <div className="flex justify-between gap-2 text-2xl items-center">
@@ -267,19 +228,11 @@ export function App() {
         </div>
       </div>
 
-      <div className="p-4 w-full bg-slate-600 flex justify-center text-slate-50">
-        2024 &copy; Mezuu
-      </div>
+      <div className="p-4 w-full bg-slate-600 flex justify-center text-slate-50">2024 &copy; Mezuu</div>
     </>
   );
 
-  function Icon({
-    children,
-    label,
-  }: {
-    children: React.ReactNode;
-    label?: string;
-  }) {
+  function Icon({ children, label }: { children: React.ReactNode; label?: string }) {
     return (
       <div
         className="w-16 p-2 shadow-md border rounded-md flex items-center relative whitespace-nowrap text-sm"
