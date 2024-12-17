@@ -9,10 +9,14 @@ jobs:
   build-and-deploy:
     name: Build, Push, and Deploy to Docker Swarm
     runs-on: self-hosted  # Specify self-hosted runner
-    env:
-      IMAGE_NAME: ghcr.io/${{ github.repository }}:${{ github.sha }}
+    # env:
+    #   IMAGE_NAME: ghcr.io/${{ github.repository }}:${{ github.sha }}
 
     steps:
+      - name: downcase REPO
+        run: |
+          echo "IMAGE_NAME=ghcr.io/${GITHUB_REPOSITORY,,}:${GITHUB_SHA,,}" >>${GITHUB_ENV}
+
       # 1. Checkout repository
       - name: Checkout code
         uses: actions/checkout@v4
