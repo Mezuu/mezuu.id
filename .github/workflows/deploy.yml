@@ -26,22 +26,22 @@ jobs:
       # 3. Build the Docker image
       - name: Build Docker image
         run: |
-          IMAGE_NAME=ghcr.io/${{ github.repository }}/mezuu-id:${{ github.sha }}
+          IMAGE_NAME=ghcr.io/${{ github.repository }}:latest
           docker build -t $IMAGE_NAME .
 
       # 4. Push Docker image to GHCR
       - name: Push Docker image
         run: |
-          IMAGE_NAME=ghcr.io/${{ github.repository }}/mezuu-id:${{ github.sha }}
-          docker push $IMAGE_NAME
-          docker tag $IMAGE_NAME ghcr.io/${{ github.repository }}/mezuu-id:latest
-          docker push ghcr.io/${{ github.repository }}/mezuu-id:latest
+          IMAGE_NAME=ghcr.io/${{ github.repository }}:latest
+          # docker push $IMAGE_NAME
+          docker tag $IMAGE_NAME ghcr.io/${{ github.repository }}:latest
+          docker push ghcr.io/${{ github.repository }}:latest
 
       # 5. Deploy to Docker Swarm
       - name: Deploy to Docker Swarm
         run: |
           # Pull the latest image from GHCR
-          IMAGE_NAME=ghcr.io/${{ github.repository }}/mezuu-id:latest
+          IMAGE_NAME=ghcr.io/${{ github.repository }}:latest
           docker pull $IMAGE_NAME
           
           # Replace __IMAGE__ in docker-compose.yml with the image name
