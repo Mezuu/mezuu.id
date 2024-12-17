@@ -16,4 +16,4 @@ COPY --from=build /app/dist/ ./
 
 EXPOSE 3000
 # Run BusyBox httpd
-CMD ["busybox", "httpd", "-f", "-v", "-h", "/app", "-p", "3000"]
+CMD ["busybox", "httpd", "-f", "-v", "-h", "/app", "-p", "0.0.0.0:3000"]
