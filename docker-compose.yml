@@ -1,11 +1,11 @@
 services:
   web:
     image: __IMAGE__
+    ports:
+      - "3000:3000"
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.mezuu-id.rule=Host(`mezuu.id`)"
       - "traefik.http.routers.mezuu-id.entrypoints=web,websecure"
       - "traefik.http.routers.mezuu-id.service=mezuu-id"
       - "traefik.http.services.mezuu-id.loadbalancer.server.port=3000"
-      - "traefik.http.routers.mezuu-id.tls=true"
-      - "traefik.docker.network=traefik_traefik"
