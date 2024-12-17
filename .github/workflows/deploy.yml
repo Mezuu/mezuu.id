@@ -10,7 +10,7 @@ jobs:
     name: Build, Push, and Deploy to Docker Swarm
     runs-on: self-hosted  # Specify self-hosted runner
     env:
-      IMAGE_NAME: ghcr.io/mezuu.id:latest
+      IMAGE_NAME: ghcr.io/${{ github.repository }}:${{ github.sha }}
 
     steps:
       # 1. Checkout repository
