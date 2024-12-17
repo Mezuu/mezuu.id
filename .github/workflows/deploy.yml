@@ -9,6 +9,9 @@ jobs:
   build-and-deploy:
     name: Build, Push, and Deploy to Docker Swarm
     runs-on: self-hosted  # Specify self-hosted runner
+    permissions: # Grant permissions to the runner
+      contents: read
+      packages: write
     # env:
     #   IMAGE_NAME: ghcr.io/${{ github.repository }}:${{ github.sha }}
 
