@@ -1,0 +1,51 @@
+name: CI/CD for GHCR and Docker Swarm with Self-Hosted Runner
+
+on:
+  push:
+    branches:
+      - master  # Trigger on push to the main branch
+
+jobs:
+  build-and-deploy:
+    name: Build, Push, and Deploy to Docker Swarm
+    runs-on: self-hosted  # Specify self-hosted runner
+
+    steps:
+      # 1. Checkout repository
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # 2. Log in to GitHub Container Registry (GHCR)
+      - name: Log in to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      # 3. Build the Docker image
+      - name: Build Docker image
+        run: |
+          IMAGE_NAME=ghcr.io/${{ github.repository }}/mezuu-id:${{ github.sha }}
+          docker build -t $IMAGE_NAME .
+
+      # 4. Push Docker image to GHCR
+      - name: Push Docker image
+        run: |
+          IMAGE_NAME=ghcr.io/${{ github.repository }}/mezuu-id:${{ github.sha }}
+          docker push $IMAGE_NAME
+          docker tag $IMAGE_NAME ghcr.io/${{ github.repository }}/mezuu-id:latest
+          docker push ghcr.io/${{ github.repository }}/mezuu-id:latest
+
+      # 5. Deploy to Docker Swarm
+      - name: Deploy to Docker Swarm
+        run: |
+          # Pull the latest image from GHCR
+          IMAGE_NAME=ghcr.io/${{ github.repository }}/mezuu-id:latest
+          docker pull $IMAGE_NAME
+          
+          # Replace __IMAGE__ in docker-compose.yml with the image name
+          sed -i "s|__IMAGE__|$IMAGE_NAME|g" docker-compose.yml
+
+          # Update the stack or create it if not exists
+          docker stack deploy -c docker-compose.yml mezuu-id

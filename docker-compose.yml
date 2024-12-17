@@ -1,0 +1,9 @@
+services:
+  web:
+    image: __IMAGE__
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.mezuu-id.rule=Host(`mezuu.id`)"
+      - "traefik.http.routers.mezuu-id.entrypoints=web"
+      - "traefik.http.routers.mezuu-id.service=mezuu-id@docker"
+      - "traefik.http.services.mezuu-id.loadbalancer.server.port=3000"
