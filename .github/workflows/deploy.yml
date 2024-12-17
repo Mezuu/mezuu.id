@@ -9,6 +9,8 @@ jobs:
   build-and-deploy:
     name: Build, Push, and Deploy to Docker Swarm
     runs-on: self-hosted  # Specify self-hosted runner
+    env:
+      IMAGE_NAME: ghcr.io/mezuu.id:latest
 
     steps:
       # 1. Checkout repository
@@ -26,26 +28,21 @@ jobs:
       # 3. Build the Docker image
       - name: Build Docker image
         run: |
-          IMAGE_NAME=ghcr.io/${{ github.repository }}:latest
-          docker build -t $IMAGE_NAME .
+          docker build -t ${{ env.IMAGE_NAME }} .
 
       # 4. Push Docker image to GHCR
       - name: Push Docker image
         run: |
-          IMAGE_NAME=ghcr.io/${{ github.repository }}:latest
-          # docker push $IMAGE_NAME
-          docker tag $IMAGE_NAME ghcr.io/${{ github.repository }}:latest
-          docker push ghcr.io/${{ github.repository }}:latest
+          docker push ${{ env.IMAGE_NAME }}
 
       # 5. Deploy to Docker Swarm
       - name: Deploy to Docker Swarm
         run: |
           # Pull the latest image from GHCR
-          IMAGE_NAME=ghcr.io/${{ github.repository }}:latest
-          docker pull $IMAGE_NAME
+          docker pull ${{ env.IMAGE_NAME }}
           
           # Replace __IMAGE__ in docker-compose.yml with the image name
-          sed -i "s|__IMAGE__|$IMAGE_NAME|g" docker-compose.yml
+          sed -i "s|__IMAGE__|${{ env.IMAGE_NAME }}|g" docker-compose.yml
 
           # Update the stack or create it if not exists
           docker stack deploy -c docker-compose.yml mezuu-id
